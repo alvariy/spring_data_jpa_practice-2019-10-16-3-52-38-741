@@ -1,4 +1,6 @@
-CREATE TABLE 'criminal_element'(
+DROP TABLE IF EXISTS 'procuratorate'
+
+CREATE TABLE 'criminal_case'(
       'id' BINARY(16) NOT NULL,
       'name' varchar(255) DEFAULT NULL,
       'time' date DEFAULT NULL,
