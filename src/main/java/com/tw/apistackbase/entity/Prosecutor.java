@@ -19,6 +19,62 @@ public class Prosecutor {
     @NotNull
     private String name;
 
+    @NotNull
+    private Integer age;
+
+    @NotNull
+    private String sex;
+
+    @NotNull
+    private Integer experience;
+
+    @NotNull
+    private String birthday;
+
+    public Prosecutor(String id, @NotNull String name, @NotNull Integer age, @NotNull String sex, @NotNull Integer experience, @NotNull String birthday) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.experience = experience;
+        this.birthday = birthday;
+    }
+
+    public Prosecutor() {
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public Integer getExperience() {
+        return experience;
+    }
+
+    public void setExperience(Integer experience) {
+        this.experience = experience;
+    }
+
     public String getId() {
         return id;
     }
