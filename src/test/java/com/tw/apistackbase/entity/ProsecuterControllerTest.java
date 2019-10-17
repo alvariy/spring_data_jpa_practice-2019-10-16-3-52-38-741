@@ -69,4 +69,21 @@ public class ProsecuterControllerTest {
                 .andDo(print())
         ;
     }
+
+    @Test
+    void should_return_bad_request_when_age_is_under_18() throws Exception{
+        Prosecutor me = new Prosecutor("1","Martin",15, "Male", 1, "2069-69-69");
+        //given
+        when(prosecutorRepo.save(me)).thenReturn(me);
+        //when
+        ResultActions result = mvc.perform(post("/api/prosecutor")
+                .content(new ObjectMapper().writeValueAsString(me))
+                .contentType(MediaType.APPLICATION_JSON));
+        //then
+        result.andExpect(status().isBadRequest())
+                .andDo(print())
+        ;
+    }
+
+    
 }

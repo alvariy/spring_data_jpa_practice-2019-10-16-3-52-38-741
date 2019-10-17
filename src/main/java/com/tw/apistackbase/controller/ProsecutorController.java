@@ -25,6 +25,10 @@ public class ProsecutorController {
 
     @PostMapping(path = "/prosecutor", produces = {"application/json"})
     public ResponseEntity addProsecutor(@RequestBody Prosecutor prosecutor){
+        if(prosecutor.getAge() < 18)
+        {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         prosecutorRepo.save(prosecutor);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
