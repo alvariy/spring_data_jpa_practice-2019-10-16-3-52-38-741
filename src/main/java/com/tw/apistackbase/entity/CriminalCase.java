@@ -20,10 +20,12 @@ public class CriminalCase {
     private Long time;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="element_id", referencedColumnName = "id")
     private CriminalElements criminalElements;
 
     @NotNull
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="procuratorate_id", referencedColumnName = "id", nullable = false)
     private Procuratorate procuratorate;
 
     public String getId() {
